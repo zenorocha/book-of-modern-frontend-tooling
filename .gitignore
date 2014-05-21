@@ -1,6 +1,0 @@
-node_modules
-**/*/config.rb
-.sass-cache
-node_modules
-dist
-bower_components

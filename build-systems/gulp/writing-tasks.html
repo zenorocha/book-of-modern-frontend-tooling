@@ -1,94 +1,523 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content=""><title>Book of Modern frontend tooling</title><link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css"><link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css"><link rel="stylesheet" href="/book-of-modern-frontend-tooling/assets/css/style.css"><base href="/book-of-modern-frontend-tooling/"><script src="http://code.jquery.com/jquery-2.1.0.min.js"></script></head><body><div id="container" class="container-fluid"><div class="row"><div id="sidebar" class="sidebar col-md-3"><div><div class="logo"><a href="https://github.com/tooling/book-of-modern-frontend-tooling">The Front-end Tooling Book</a></div><br><ul>
-<li><p><a href="index.html">Introduction</a></p>
-</li>
-<li><p>Scaffolding</p>
-<ul>
-<li>Yeoman</li>
-<li>Brunch</li>
-<li>Loom</li>
-</ul>
-</li>
-<li><p>Dependency management</p>
-<ul>
-<li>Bower<ul>
-<li><a href="dependency-management/bower/introduction.html">Introduction</a></li>
-</ul>
-</li>
-<li>WebPack<ul>
-<li><a href="dependency-management/webpack/introduction.html">Introduction</a></li>
-<li><a href="dependency-management/webpack/getting-started.html">Getting Started</a></li>
-<li><a href="dependency-management/webpack/1-requiring-modules.html">Requiring Modules</a></li>
-<li><a href="dependency-management/webpack/2-using-loaders.html">Using Loaders</a></li>
-<li><a href="dependency-management/webpack/3-code-splitting.html">Code Splitting</a></li>
-<li><a href="dependency-management/webpack/4-multi-entry-builds.html">Muli-entry Builds</a></li>
-<li><a href="dependency-management/webpack/5-require-context.html">Require Context</a></li>
-<li><a href="dependency-management/webpack/6-hot-module-replacement.html">Hot Module Replacement</a></li>
-<li>Chunk Optimization</li>
-<li><a href="dependency-management/webpack/8-writing-loaders-and-
-plugins.html">Writing Loaders And Plugins</a></li>
-<li><a href="dependency-management/webpack/9-use-with-build-tools.html">Use With Build Tools</a></li>
-<li><a href="dependency-management/webpack/references.html">References</a></li>
-<li><a href="dependency-management/webpack/troubleshooting.html">Troubleshooting</a></li>
-</ul>
-</li>
-<li>NPM browserify<ul>
-<li><a href="dependency-management/npm-browserify/introduction.html">Introduction</a></li>
-<li><a href="dependency-management/npm-browserify/getting-started.html">Getting started</a></li>
-<li><a href="dependency-management/npm-browserify/writing-modules.html">Writing Modules</a></li>
-<li><a href="dependency-management/npm-browserify/development-workflow.html">Development Workflow</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Build Systems</p>
-<ul>
-<li>Modern tools vs shell scripts</li>
-<li>Grunt<ul>
-<li><a href="build-systems/grunt/getting-started.html">Getting started</a></li>
-<li><a href="build-systems/grunt/linter.html">Linting code</a></li>
-<li><a href="build-systems/grunt/sass.html">Integrating a CSS preprocessor</a></li>
-</ul>
-</li>
-<li>Brunch<ul>
-<li><a href="build-systems/brunch/introduction.html">Introduction</a></li>
-<li><a href="build-systems/brunch/getting-started.html">Getting started</a></li>
-<li><a href="build-systems/brunch/using-brunch.html">Using Brunch</a></li>
-</ul>
-</li>
-<li>Gulp<ul>
-<li><a href="build-systems/gulp/introduction.html">Introduction</a></li>
-<li><a href="build-systems/gulp/getting-started.html">Getting started</a></li>
-<li><a href="build-systems/gulp/writing-tasks.html">Writing tasks</a></li>
-<li><a href="build-systems/gulp/references.html">References</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div></div><div id="content" class="content col-md-9"><h1 id="writing-tasks">Writing Tasks</h1>
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../../manifest.appcache">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Writing Tasks | Book of Modern Front-end Tooling</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="zenorocha">
+        <meta name="description" content="This is a free, work-in-progress open-source book introducing you to the world of tooling for modern web applications.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../../build-systems/gulp/references.html" />
+        
+        
+        <link rel="prev" href="../../build-systems/gulp/getting-started.html" />
+        
+
+        <meta property="og:title" content="Writing Tasks | Book of Modern Front-end Tooling">
+        <meta property="og:site_name" content="Book of Modern Front-end Tooling">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/zenorocha">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    </head>
+    <body>
+        
+
+        <link rel="stylesheet" href="../../gitbook/style.css">
+        
+
+
+        
+    <div class="book" data-github="zenorocha/book-of-modern-frontend-tooling" data-level="10.2" data-basepath="../.." data-revision="1400713011628">
+    <div class="book-header">
+    <!-- Actions Left -->
+    
+    <a href="https://github.com/zenorocha/book-of-modern-frontend-tooling" target="_blank" class="btn pull-left"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+	<div class="dropdown-caret">
+  <span class="caret-outer"></span>
+  <span class="caret-inner"></span>
+</div>
+
+	<div class="btn-group btn-block">
+		<button id="reduce-font-size" class="btn btn-default">A</button>
+		<button id="enlarge-font-size" class="btn btn-default">A</button>
+	</div>
+
+	<ul class="list-group font-family-list">
+		<li class="list-group-item" data-font="0">Serif</li>
+		<li class="list-group-item" data-font="1">Sans</li>
+	</ul>
+
+	<div class="btn-group btn-group-xs btn-block color-theme-list">
+	  <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+	  <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+	  <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+	</div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    
+
+    
+    <a href="https://github.com/zenorocha/book-of-modern-frontend-tooling/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/zenorocha/book-of-modern-frontend-tooling/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../../" >Book of Modern Front-end Tooling</a>
+    </h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        <li>
+            <a href="https://github.com/zenorocha" target="blank">About the author</a>
+        </li>
+        
+
+        
+        <li>
+            <a href="https://github.com/zenorocha/book-of-modern-frontend-tooling/issues" target="blank">Questions and Issues</a>
+        </li>
+        
+
+        
+        <li>
+            <a href="https://github.com/zenorocha/book-of-modern-frontend-tooling/edit/master/build-systems/gulp/writing-tasks.md" target="blank">Edit and Contribute</a>
+        </li>
+        
+
+        
+        <li class="divider"></li>
+        
+
+        <li data-level="0" data-path="index.html">
+            <a href="../../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" >
+                
+                <span><b>1.</b> Yeoman</span>
+                
+                
+            </li>
+        
+            <li  data-level="2" >
+                
+                <span><b>2.</b> Brunch</span>
+                
+                
+            </li>
+        
+            <li  data-level="3" >
+                
+                <span><b>3.</b> Loom</span>
+                
+                
+            </li>
+        
+            <li  data-level="4" data-path="dependency-management/bower/introduction.html">
+                
+                <a href="../../dependency-management/bower/introduction.html">
+                    <i class="fa fa-check"></i> <b>4.</b> Bower
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="5" data-path="dependency-management/webpack/introduction.html">
+                
+                <a href="../../dependency-management/webpack/introduction.html">
+                    <i class="fa fa-check"></i> <b>5.</b> webpack
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="5.1" data-path="dependency-management/webpack/getting-started.html">
+                            
+                            <a href="../../dependency-management/webpack/getting-started.html">
+                                <i class="fa fa-check"></i> <b>5.1.</b> Getting Started
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.2" data-path="dependency-management/webpack/1-requiring-modules.html">
+                            
+                            <a href="../../dependency-management/webpack/1-requiring-modules.html">
+                                <i class="fa fa-check"></i> <b>5.2.</b> Requiring Modules
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.3" data-path="dependency-management/webpack/2-using-loaders.html">
+                            
+                            <a href="../../dependency-management/webpack/2-using-loaders.html">
+                                <i class="fa fa-check"></i> <b>5.3.</b> Using Loaders
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.4" data-path="dependency-management/webpack/3-code-splitting.html">
+                            
+                            <a href="../../dependency-management/webpack/3-code-splitting.html">
+                                <i class="fa fa-check"></i> <b>5.4.</b> Code Splitting
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.5" data-path="dependency-management/webpack/4-multi-entry-builds.html">
+                            
+                            <a href="../../dependency-management/webpack/4-multi-entry-builds.html">
+                                <i class="fa fa-check"></i> <b>5.5.</b> Muli-entry Builds
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.6" data-path="dependency-management/webpack/5-require-context.html">
+                            
+                            <a href="../../dependency-management/webpack/5-require-context.html">
+                                <i class="fa fa-check"></i> <b>5.6.</b> Require Context
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.7" data-path="dependency-management/webpack/6-hot-module-replacement.html">
+                            
+                            <a href="../../dependency-management/webpack/6-hot-module-replacement.html">
+                                <i class="fa fa-check"></i> <b>5.7.</b> Hot Module Replacement
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.8" >
+                            
+                            <span><b>5.8.</b> Chunk Optimization</span>
+                            
+                        </li>
+                    
+                        <li  data-level="5.9" data-path="dependency-management/webpack/8-writing-loaders-and-plugins.html">
+                            
+                            <a href="../../dependency-management/webpack/8-writing-loaders-and-plugins.html">
+                                <i class="fa fa-check"></i> <b>5.9.</b> Writing Loaders And Plugins
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.10" data-path="dependency-management/webpack/9-use-with-build-tools.html">
+                            
+                            <a href="../../dependency-management/webpack/9-use-with-build-tools.html">
+                                <i class="fa fa-check"></i> <b>5.10.</b> Use With Build Tools
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.11" data-path="dependency-management/webpack/references.html">
+                            
+                            <a href="../../dependency-management/webpack/references.html">
+                                <i class="fa fa-check"></i> <b>5.11.</b> References
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.12" data-path="dependency-management/webpack/troubleshooting.html">
+                            
+                            <a href="../../dependency-management/webpack/troubleshooting.html">
+                                <i class="fa fa-check"></i> <b>5.12.</b> Troubleshooting
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="6" data-path="dependency-management/npm-browserify/introduction.html">
+                
+                <a href="../../dependency-management/npm-browserify/introduction.html">
+                    <i class="fa fa-check"></i> <b>6.</b> NPM browserify
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="6.1" data-path="dependency-management/npm-browserify/getting-started.html">
+                            
+                            <a href="../../dependency-management/npm-browserify/getting-started.html">
+                                <i class="fa fa-check"></i> <b>6.1.</b> Getting Started
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.2" data-path="dependency-management/npm-browserify/modules.html">
+                            
+                            <a href="../../dependency-management/npm-browserify/modules.html">
+                                <i class="fa fa-check"></i> <b>6.2.</b> Modules
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.3" data-path="dependency-management/npm-browserify/transforms.html">
+                            
+                            <a href="../../dependency-management/npm-browserify/transforms.html">
+                                <i class="fa fa-check"></i> <b>6.3.</b> Transforms
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.4" data-path="dependency-management/npm-browserify/development-workflow.html">
+                            
+                            <a href="../../dependency-management/npm-browserify/development-workflow.html">
+                                <i class="fa fa-check"></i> <b>6.4.</b> Development Workflow
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="7" >
+                
+                <span><b>7.</b> Modern Tools vs Shell Scripts</span>
+                
+                
+            </li>
+        
+            <li  data-level="8" data-path="build-systems/grunt/getting-started.html">
+                
+                <a href="../../build-systems/grunt/getting-started.html">
+                    <i class="fa fa-check"></i> <b>8.</b> Grunt
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="8.1" data-path="build-systems/grunt/linter.html">
+                            
+                            <a href="../../build-systems/grunt/linter.html">
+                                <i class="fa fa-check"></i> <b>8.1.</b> Linting Code
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="8.2" data-path="build-systems/grunt/sass.html">
+                            
+                            <a href="../../build-systems/grunt/sass.html">
+                                <i class="fa fa-check"></i> <b>8.2.</b> Integrating a CSS preprocessor
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="9" data-path="build-systems/brunch/introduction.html">
+                
+                <a href="../../build-systems/brunch/introduction.html">
+                    <i class="fa fa-check"></i> <b>9.</b> Brunch
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="9.1" data-path="build-systems/brunch/getting-started.html">
+                            
+                            <a href="../../build-systems/brunch/getting-started.html">
+                                <i class="fa fa-check"></i> <b>9.1.</b> Getting Started
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="9.2" data-path="build-systems/brunch/using-brunch.html">
+                            
+                            <a href="../../build-systems/brunch/using-brunch.html">
+                                <i class="fa fa-check"></i> <b>9.2.</b> Using Brunch
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="10" data-path="build-systems/gulp/introduction.html">
+                
+                <a href="../../build-systems/gulp/introduction.html">
+                    <i class="fa fa-check"></i> <b>10.</b> Gulp
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="10.1" data-path="build-systems/gulp/getting-started.html">
+                            
+                            <a href="../../build-systems/gulp/getting-started.html">
+                                <i class="fa fa-check"></i> <b>10.1.</b> Getting Started
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="10.2" data-path="build-systems/gulp/writing-tasks.html">
+                            
+                            <a href="../../build-systems/gulp/writing-tasks.html">
+                                <i class="fa fa-check"></i> <b>10.2.</b> Writing Tasks
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="10.3" data-path="build-systems/gulp/references.html">
+                            
+                            <a href="../../build-systems/gulp/references.html">
+                                <i class="fa fa-check"></i> <b>10.3.</b> References
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 10.714285714285714%;min-width: 7.142857142857143%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../../build-systems/gulp/introduction.html" title="Gulp" class="chapter done " data-progress="10" style="left: 3.5714285714285716%;"></a>
+    
+        <a href="../../build-systems/gulp/getting-started.html" title="Getting Started" class="chapter done " data-progress="10.1" style="left: 7.142857142857143%;"></a>
+    
+        <a href="../../build-systems/gulp/writing-tasks.html" title="Writing Tasks" class="chapter done " data-progress="10.2" style="left: 10.714285714285714%;"></a>
+    
+        <a href="../../build-systems/gulp/references.html" title="References" class="chapter  " data-progress="10.3" style="left: 14.285714285714286%;"></a>
+    
+        <a href="../../dependency-management/bower/introduction.html" title="Bower" class="chapter  new-chapter" data-progress="4" style="left: 17.857142857142858%;"></a>
+    
+        <a href="../../dependency-management/webpack/introduction.html" title="webpack" class="chapter  new-chapter" data-progress="5" style="left: 21.428571428571427%;"></a>
+    
+        <a href="../../dependency-management/webpack/getting-started.html" title="Getting Started" class="chapter  " data-progress="5.1" style="left: 25%;"></a>
+    
+        <a href="../../dependency-management/webpack/9-use-with-build-tools.html" title="Use With Build Tools" class="chapter  " data-progress="5.10" style="left: 28.571428571428573%;"></a>
+    
+        <a href="../../dependency-management/webpack/references.html" title="References" class="chapter  " data-progress="5.11" style="left: 32.142857142857146%;"></a>
+    
+        <a href="../../dependency-management/webpack/troubleshooting.html" title="Troubleshooting" class="chapter  " data-progress="5.12" style="left: 35.714285714285715%;"></a>
+    
+        <a href="../../dependency-management/webpack/1-requiring-modules.html" title="Requiring Modules" class="chapter  " data-progress="5.2" style="left: 39.285714285714285%;"></a>
+    
+        <a href="../../dependency-management/webpack/2-using-loaders.html" title="Using Loaders" class="chapter  " data-progress="5.3" style="left: 42.857142857142854%;"></a>
+    
+        <a href="../../dependency-management/webpack/3-code-splitting.html" title="Code Splitting" class="chapter  " data-progress="5.4" style="left: 46.42857142857143%;"></a>
+    
+        <a href="../../dependency-management/webpack/4-multi-entry-builds.html" title="Muli-entry Builds" class="chapter  " data-progress="5.5" style="left: 50%;"></a>
+    
+        <a href="../../dependency-management/webpack/5-require-context.html" title="Require Context" class="chapter  " data-progress="5.6" style="left: 53.57142857142857%;"></a>
+    
+        <a href="../../dependency-management/webpack/6-hot-module-replacement.html" title="Hot Module Replacement" class="chapter  " data-progress="5.7" style="left: 57.142857142857146%;"></a>
+    
+        <a href="../../dependency-management/webpack/8-writing-loaders-and-plugins.html" title="Writing Loaders And Plugins" class="chapter  " data-progress="5.9" style="left: 60.714285714285715%;"></a>
+    
+        <a href="../../dependency-management/npm-browserify/introduction.html" title="NPM browserify" class="chapter  new-chapter" data-progress="6" style="left: 64.28571428571429%;"></a>
+    
+        <a href="../../dependency-management/npm-browserify/getting-started.html" title="Getting Started" class="chapter  " data-progress="6.1" style="left: 67.85714285714286%;"></a>
+    
+        <a href="../../dependency-management/npm-browserify/modules.html" title="Modules" class="chapter  " data-progress="6.2" style="left: 71.42857142857143%;"></a>
+    
+        <a href="../../dependency-management/npm-browserify/transforms.html" title="Transforms" class="chapter  " data-progress="6.3" style="left: 75%;"></a>
+    
+        <a href="../../dependency-management/npm-browserify/development-workflow.html" title="Development Workflow" class="chapter  " data-progress="6.4" style="left: 78.57142857142857%;"></a>
+    
+        <a href="../../build-systems/grunt/getting-started.html" title="Grunt" class="chapter  new-chapter" data-progress="8" style="left: 82.14285714285714%;"></a>
+    
+        <a href="../../build-systems/grunt/linter.html" title="Linting Code" class="chapter  " data-progress="8.1" style="left: 85.71428571428571%;"></a>
+    
+        <a href="../../build-systems/grunt/sass.html" title="Integrating a CSS preprocessor" class="chapter  " data-progress="8.2" style="left: 89.28571428571429%;"></a>
+    
+        <a href="../../build-systems/brunch/introduction.html" title="Brunch" class="chapter  new-chapter" data-progress="9" style="left: 92.85714285714286%;"></a>
+    
+        <a href="../../build-systems/brunch/getting-started.html" title="Getting Started" class="chapter  " data-progress="9.1" style="left: 96.42857142857143%;"></a>
+    
+        <a href="../../build-systems/brunch/using-brunch.html" title="Using Brunch" class="chapter  " data-progress="9.2" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_13">
+                    
+                        <h1 id="writing-tasks">Writing Tasks</h1>
 <p>Once you have installed gulp, you can now begin writing the tasks that you would like to automate. These tasks could include (but are not limited to) concatenating files, compiling SASS, minifying JavaScript, or linting your code. In this section, we will identify some common development tasks and walkthrough how to automate them in gulp using pipes. These code examples should give you a solid enough understanding of how gulp works so that once you have completed this section you will be ready to write your own tasks from scratch.</p>
 <h2 id="concatenating-your-files">Concatenating Your Files</h2>
 <p>Concatenating files is an important performance improvement because it reduces the amount of HTTP requests your project is required to make to display your website or application.</p>
 <h3 id="1-install-concat-plugin">1. Install Concat Plugin</h3>
-<pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>npm install --save-dev gulp-concat
-</pre></div>
-
+<pre><code class="lang-bash">$ npm install --save-dev gulp-concat
 </code></pre>
 <h3 id="2-include-concat-plugin">2. Include Concat Plugin</h3>
 <p>Now that we have installed our concat plugin locally, we need to include it in our gulpfile so that we may use it in our tasks.</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">concat</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-concat&#39;</span><span class="p">);</span>
-</pre></div>
-
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> concat = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-concat'</span>);
 </code></pre>
 <h3 id="3-create-concat-task">3. Create Concat Task</h3>
 <p>Now, concatenating is as simple as passing a .pipe(concat(&#39;filename&#39;)) in your tasks pipechain. Like so:</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;concat&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;src/js/*.js&#39;</span><span class="p">)</span>         <span class="c1">// Targets All JS Files In Our src/ Directory</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">concat</span><span class="p">(</span><span class="s1">&#39;all.js&#39;</span><span class="p">))</span>     <span class="c1">// Creates New all.js File With Code From Target Files</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;dist&#39;</span><span class="p">));</span>   <span class="c1">// Places The New File In Our dist/ Directory</span>
-<span class="p">});</span>
-</pre></div>
-
+<pre><code class="lang-js">gulp.task(<span class="hljs-string">'concat'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    gulp.src(<span class="hljs-string">'src/js/*.js'</span>)         <span class="hljs-comment">// Targets All JS Files In Our src/ Directory</span>
+        .pipe(concat(<span class="hljs-string">'all.js'</span>))     <span class="hljs-comment">// Creates New all.js File With Code From Target Files</span>
+        .pipe(gulp.dest(<span class="hljs-string">'dist'</span>));   <span class="hljs-comment">// Places The New File In Our dist/ Directory</span>
+});
 </code></pre>
 <blockquote>
 <p>Reminder! The <code>.pipe()</code> is how we connect our smaller, single-purpose applications/libraries together. This collection of pipes is referred to as the <em>pipechain</em>.</p>
@@ -97,154 +526,169 @@ plugins.html">Writing Loaders And Plugins</a></li>
 <h2 id="linting-your-code">Linting Your Code</h2>
 <p>Linting can save you from spending a lot of time blindly debugging your code by notifying you if you have made simple mistakes as you work on and save your files.</p>
 <h3 id="1-install-jshint-plugin">1. Install JSHint Plugin</h3>
-<pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>npm install --save-dev gulp-jshint
-</pre></div>
-
+<pre><code class="lang-bash">$ npm install --save-dev gulp-jshint
 </code></pre>
 <h3 id="2-include-jshint-plugin">2. Include JSHint Plugin</h3>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">jshint</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-jshint&#39;</span><span class="p">);</span>
-</pre></div>
-
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> jshint = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-jshint'</span>);
 </code></pre>
 <h3 id="3-create-lint-task">3. Create Lint Task</h3>
 <p>In your gulpfile add the following code:</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;lint&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;src/js/*.js&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">jshint</span><span class="p">())</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">jshint</span><span class="p">.</span><span class="nx">reporter</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">));</span>
-<span class="p">});</span>
-</pre></div>
-
+<pre><code class="lang-js">gulp.task(<span class="hljs-string">'lint'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    gulp.src(<span class="hljs-string">'src/js/*.js'</span>)
+        .pipe(jshint())
+        .pipe(jshint.reporter(<span class="hljs-string">'default'</span>));
+});
 </code></pre>
 <p>Now, when you run this task it will check for problems in your code and then send those along to the reporter that you have assigned which will output them in your command-line application. In this case we have used the default reporter for the sake of simplicity.</p>
 <h2 id="minifying-your-code">Minifying Your Code</h2>
 <p>Minifying your code is another performance improvement like concatenation except instead of reducing the amount of files, it reduces the size of your files. Using both together is a simple way to improve the efficiency and performance of your website or application.</p>
 <h3 id="1-install-uglify-plugin">1. Install Uglify Plugin</h3>
-<pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>npm install --save-dev gulp-uglify
-</pre></div>
-
+<pre><code class="lang-bash">$ npm install --save-dev gulp-uglify
 </code></pre>
 <h3 id="2-include-uglify-plugin">2. Include Uglify Plugin</h3>
 <p>Open your gulpfile.js and add the following code to the top.</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">uglify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-uglify&#39;</span><span class="p">);</span>
-</pre></div>
-
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> uglify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-uglify'</span>);
 </code></pre>
 <h3 id="3-create-minify-task">3. Create Minify Task</h3>
 <p>Now, we will write our minify task. Add the following code to your gulpfile.</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;minify&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;src/js/*.js&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;dist&#39;</span><span class="p">));</span>
-<span class="p">});</span>
-</pre></div>
-
+<pre><code class="lang-js">gulp.task(<span class="hljs-string">'minify'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    gulp.src(<span class="hljs-string">'src/js/*.js'</span>)
+        .pipe(uglify())
+        .pipe(gulp.dest(<span class="hljs-string">'dist'</span>));
+});
 </code></pre>
 <h2 id="css-preprocessing">CSS Preprocessing</h2>
 <h3 id="1-install-preprocessor-plugin">1. Install Preprocessor Plugin</h3>
 <p>Identify the preprocessor that your project will be using (e.g. Sass, Less, Stylus, Myth) and then locate the correct plugin for gulp.</p>
 <p>For instance, to install the gulp-sass plugin:</p>
-<pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>npm install --save-dev gulp-sass
-</pre></div>
-
+<pre><code class="lang-bash">$ npm install --save-dev gulp-sass
 </code></pre>
 <h3 id="2-include-preprocessor-plugin">2. Include Preprocessor Plugin</h3>
 <p>Now that we have installed the proper plugin, we need to include it at the top of our gulpfile. In our case we&#39;re using Sass, but this applies to any of the others as well.</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">sass</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-sass&#39;</span><span class="p">);</span>
-</pre></div>
-
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> sass = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-sass'</span>);
 </code></pre>
 <h3 id="3-create-preprocessing-task">3. Create Preprocessing Task</h3>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;styles&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;src/scss/*.scss&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">())</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;dist&#39;</span><span class="p">));</span>
-<span class="p">});</span>
-</pre></div>
-
+<pre><code class="lang-js">gulp.task(<span class="hljs-string">'styles'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    gulp.src(<span class="hljs-string">'src/scss/*.scss'</span>)
+        .pipe(sass())
+        .pipe(gulp.dest(<span class="hljs-string">'dist'</span>));
+});
 </code></pre>
 <h2 id="creating-a-default-task-watching-our-files">Creating A Default Task &amp; Watching Our Files</h2>
 <p>The default task is the task that runs when you input <code>gulp</code> in your command line tool without passing it a specific task name. This will reference the other tasks that we have created including a new <strong>watch</strong> task that will check for changes to our files and run our tasks each time we save them.</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;watch&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">&#39;src/js/*.js&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;scripts&#39;</span><span class="p">]);</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">&#39;src/scss/*.scss&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;styles&#39;</span><span class="p">]);</span>
-<span class="p">});</span>
+<pre><code class="lang-js">gulp.task(<span class="hljs-string">'watch'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    gulp.watch(<span class="hljs-string">'src/js/*.js'</span>, [<span class="hljs-string">'scripts'</span>]);
+    gulp.watch(<span class="hljs-string">'src/scss/*.scss'</span>, [<span class="hljs-string">'styles'</span>]);
+});
 
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;scripts&#39;</span><span class="p">,</span> <span class="s1">&#39;styles&#39;</span><span class="p">,</span> <span class="s1">&#39;watch&#39;</span><span class="p">]);</span>
-</pre></div>
-
+gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'scripts'</span>, <span class="hljs-string">'styles'</span>, <span class="hljs-string">'watch'</span>]);
 </code></pre>
 <h2 id="live-reload">Live Reload</h2>
 <p>Live Reload allows us to refresh our browser window automatically when a file is saved. Implementing this is a little more involved and takes an additional step compared to the tasks that we have setup so far. Although, don&#39;t worry, it is still quite simple to do!</p>
 <h3 id="1-install-plugins">1. Install Plugins</h3>
 <p>To get LiveReload working properly we need a couple plugins: tiny-lr and gulp-livereload.</p>
-<pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>npm install --save-dev gulp-livereload
-</pre></div>
-
+<pre><code class="lang-bash">$ npm install --save-dev gulp-livereload
 </code></pre>
 <p>The tiny-lr plugin is a <em>tiny</em> implementation of the LiveReload server that allows us to communicate with our browser so that it can refresh our pages when we save our files. The gulp-livereload plugin works as a bridge between gulp and LiveReload and allows us to pipe our file changes to our tiny-lr server so it knows exactly when to refresh our browser.</p>
 <h3 id="2-include-plugin-in-gulpfile">2. Include Plugin In gulpfile</h3>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">livereload</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-livereload&#39;</span><span class="p">);</span>
-</pre></div>
-
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> livereload = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-livereload'</span>);
 </code></pre>
 <h3 id="3-add-livereload-to-tasks">3. Add LiveReload To Tasks</h3>
 <p>Now, we need to make a few changes. First we need add an additional pipe to the tasks that we want to reload our browser. Second, we need to start our LiveReload server in our default task and assign it a port to listen to.</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="c1">// Compile/Process Styles</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;styles&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;src/scss/*.scss&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">())</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;dist&#39;</span><span class="p">))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">livereload</span><span class="p">());</span> <span class="c1">// Just Add This To Your Pipechain</span>
-<span class="p">});</span>
+<pre><code class="lang-js"><span class="hljs-comment">// Compile/Process Styles</span>
+gulp.task(<span class="hljs-string">'styles'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    gulp.src(<span class="hljs-string">'src/scss/*.scss'</span>)
+        .pipe(sass())
+        .pipe(gulp.dest(<span class="hljs-string">'dist'</span>))
+        .pipe(livereload()); <span class="hljs-comment">// Just Add This To Your Pipechain</span>
+});
 
-<span class="c1">// Minify Scripts</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;scripts&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;src/js/*.js&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;dist&#39;</span><span class="p">))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">livereload</span><span class="p">());</span> <span class="c1">// Just Add This To Your Pipechain</span>
-<span class="p">});</span>
+<span class="hljs-comment">// Minify Scripts</span>
+gulp.task(<span class="hljs-string">'scripts'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    gulp.src(<span class="hljs-string">'src/js/*.js'</span>)
+        .pipe(uglify())
+        .pipe(gulp.dest(<span class="hljs-string">'dist'</span>))
+        .pipe(livereload()); <span class="hljs-comment">// Just Add This To Your Pipechain</span>
+});
 
-<span class="c1">// Watch Task</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;watch&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">&#39;src/js/*.js&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;scripts&#39;</span><span class="p">]);</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">&#39;src/scss/*.scss&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;styles&#39;</span><span class="p">]);</span>
-<span class="p">});</span>
+<span class="hljs-comment">// Watch Task</span>
+gulp.task(<span class="hljs-string">'watch'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    gulp.watch(<span class="hljs-string">'src/js/*.js'</span>, [<span class="hljs-string">'scripts'</span>]);
+    gulp.watch(<span class="hljs-string">'src/scss/*.scss'</span>, [<span class="hljs-string">'styles'</span>]);
+});
 
-<span class="c1">// Default Task</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;scripts&#39;</span><span class="p">,</span> <span class="s1">&#39;styles&#39;</span><span class="p">,</span> <span class="s1">&#39;watch&#39;</span><span class="p">]);</span>
-</pre></div>
-
+<span class="hljs-comment">// Default Task</span>
+gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'scripts'</span>, <span class="hljs-string">'styles'</span>, <span class="hljs-string">'watch'</span>]);
 </code></pre>
 <h3 id="4-add-livereload-script-to-your-page">4. Add LiveReload Script To Your Page</h3>
 <p>Now that our gulpfile has been setup we need to add a reference to the livereload.js file on our pages so that our browser can properly communicate with tiny-lr. There are multiple ways of doing this and it&#39;s really up to your personal preference. Let&#39;s go over a couple, and you can decide which is best for you.</p>
 <h4 id="manual">Manual</h4>
 <p>If you wish to manually add the LiveReload script, then open up your HTML file and simply include it just as you would any other script.</p>
-<pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;body&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
     ...
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://localhost:35729/livereload.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-</pre></div>
-
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://localhost:35729/livereload.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
 </code></pre>
 <p>That&#39;s it! You&#39;re ready to go. Keep in mind that you will have to manually include this on every page that you wish to reload automatically. In many cases that wont be much of a problem, but it is good to keep in mind if you run into issues.</p>
 <h4 id="browser-extension">Browser Extension</h4>
 <p>If you prefer to avoid manually adding the script in yourself, you can download a simple browser extension that will add the script for you automatically.</p>
-<p>In this example I will be using Chrome, but there are also extensions available for Firefox and Safari. To install, head over to the Chrome Webstore and install the <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei" title="LiveReload on Chrome Webstore">LiveReload extension</a>. Once you have it installed it will create a small icon that will allow you to enable or disable it quickly.</p>
-<p>That&#39;s really all there is to it. For more information on the LiveReload browser extensions, visit the <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-" title="Browser Extensions on the LiveReload Knowledgebase">LiveReload knowledgebase</a>.</p>
+<p>In this example I will be using Chrome, but there are also extensions available for Firefox and Safari. To install, head over to the Chrome Webstore and install the <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei" title="LiveReload on Chrome Webstore" target="_blank">LiveReload extension</a>. Once you have it installed it will create a small icon that will allow you to enable or disable it quickly.</p>
+<p>That&#39;s really all there is to it. For more information on the LiveReload browser extensions, visit the <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-" title="Browser Extensions on the LiveReload Knowledgebase" target="_blank">LiveReload knowledgebase</a>.</p>
 <h2 id="chaining-actions-together">Chaining Actions Together</h2>
 <p>The examples above are only performing a single action for the sake of simplicity, but you can actually chain many of those actions together into a single, more refined task. Gulp makes this incredibly easy.</p>
 <p>For example, we have created both a concat and a minify task separately, but in most cases we would likely need to perform these actions within the same task. Let&#39;s take a look at an example of how this can be done inside of our scripts task that we created earlier.</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="c1">// Concat &amp; Minify Scripts</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;scripts&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;src/js/*.js&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">concat</span><span class="p">(</span><span class="s1">&#39;all.js&#39;</span><span class="p">))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;dist&#39;</span><span class="p">));</span>
-<span class="p">});</span>
-</pre></div>
-
+<pre><code class="lang-js"><span class="hljs-comment">// Concat &amp; Minify Scripts</span>
+gulp.task(<span class="hljs-string">'scripts'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    gulp.src(<span class="hljs-string">'src/js/*.js'</span>)
+        .pipe(concat(<span class="hljs-string">'all.js'</span>))
+        .pipe(uglify())
+        .pipe(gulp.dest(<span class="hljs-string">'dist'</span>));
+});
 </code></pre>
 <p>Now our scripts task not only minifies our code but also concatenates our JS files as well. By adding a single line to our pipechain we are now able to perform two actions within the same task instead of creating two separate tasks dedicated to a single action.</p>
-</div></div><div id="footer" class="center">&copy; 2014 <a href="https://github.com/tooling/book-of-modern-frontend-tooling">The Front-end Tooling Book</a> Authors. Brought to you with love by the <a href='https://github.com/tooling/book-of-modern-frontend-tooling/graphs/contributors'>community</a>. Released under a CC-BY-SA-4.0 license.</div></div><!-- include ./includes/ga.jade--></body></html>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../build-systems/gulp/getting-started.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../build-systems/gulp/references.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../../gitbook/app.js"></script>
+        
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-mixpanel/plugin.js"></script>
+    
+
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
+    </body>
+</html>

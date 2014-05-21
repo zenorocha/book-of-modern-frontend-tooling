@@ -1,68 +1,542 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content=""><title>Book of Modern frontend tooling</title><link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css"><link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css"><link rel="stylesheet" href="/book-of-modern-frontend-tooling/assets/css/style.css"><base href="/book-of-modern-frontend-tooling/"><script src="http://code.jquery.com/jquery-2.1.0.min.js"></script></head><body><div id="container" class="container-fluid"><div class="row"><div id="sidebar" class="sidebar col-md-3"><div><div class="logo"><a href="https://github.com/tooling/book-of-modern-frontend-tooling">The Front-end Tooling Book</a></div><br><ul>
-<li><p><a href="index.html">Introduction</a></p>
-</li>
-<li><p>Scaffolding</p>
-<ul>
-<li>Yeoman</li>
-<li>Brunch</li>
-<li>Loom</li>
-</ul>
-</li>
-<li><p>Dependency management</p>
-<ul>
-<li>Bower<ul>
-<li><a href="dependency-management/bower/introduction.html">Introduction</a></li>
-</ul>
-</li>
-<li>WebPack<ul>
-<li><a href="dependency-management/webpack/introduction.html">Introduction</a></li>
-<li><a href="dependency-management/webpack/getting-started.html">Getting Started</a></li>
-<li><a href="dependency-management/webpack/1-requiring-modules.html">Requiring Modules</a></li>
-<li><a href="dependency-management/webpack/2-using-loaders.html">Using Loaders</a></li>
-<li><a href="dependency-management/webpack/3-code-splitting.html">Code Splitting</a></li>
-<li><a href="dependency-management/webpack/4-multi-entry-builds.html">Muli-entry Builds</a></li>
-<li><a href="dependency-management/webpack/5-require-context.html">Require Context</a></li>
-<li><a href="dependency-management/webpack/6-hot-module-replacement.html">Hot Module Replacement</a></li>
-<li>Chunk Optimization</li>
-<li><a href="dependency-management/webpack/8-writing-loaders-and-
-plugins.html">Writing Loaders And Plugins</a></li>
-<li><a href="dependency-management/webpack/9-use-with-build-tools.html">Use With Build Tools</a></li>
-<li><a href="dependency-management/webpack/references.html">References</a></li>
-<li><a href="dependency-management/webpack/troubleshooting.html">Troubleshooting</a></li>
-</ul>
-</li>
-<li>NPM browserify<ul>
-<li><a href="dependency-management/npm-browserify/introduction.html">Introduction</a></li>
-<li><a href="dependency-management/npm-browserify/getting-started.html">Getting started</a></li>
-<li><a href="dependency-management/npm-browserify/writing-modules.html">Writing Modules</a></li>
-<li><a href="dependency-management/npm-browserify/development-workflow.html">Development Workflow</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Build Systems</p>
-<ul>
-<li>Modern tools vs shell scripts</li>
-<li>Grunt<ul>
-<li><a href="build-systems/grunt/getting-started.html">Getting started</a></li>
-<li><a href="build-systems/grunt/linter.html">Linting code</a></li>
-<li><a href="build-systems/grunt/sass.html">Integrating a CSS preprocessor</a></li>
-</ul>
-</li>
-<li>Brunch<ul>
-<li><a href="build-systems/brunch/introduction.html">Introduction</a></li>
-<li><a href="build-systems/brunch/getting-started.html">Getting started</a></li>
-<li><a href="build-systems/brunch/using-brunch.html">Using Brunch</a></li>
-</ul>
-</li>
-<li>Gulp<ul>
-<li><a href="build-systems/gulp/introduction.html">Introduction</a></li>
-<li><a href="build-systems/gulp/getting-started.html">Getting started</a></li>
-<li><a href="build-systems/gulp/writing-tasks.html">Writing tasks</a></li>
-<li><a href="build-systems/gulp/references.html">References</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div></div><div id="content" class="content col-md-9"></div></div><div id="footer" class="center">&copy; 2014 <a href="https://github.com/tooling/book-of-modern-frontend-tooling">The Front-end Tooling Book</a> Authors. Brought to you with love by the <a href='https://github.com/tooling/book-of-modern-frontend-tooling/graphs/contributors'>community</a>. Released under a CC-BY-SA-4.0 license.</div></div><!-- include ./includes/ga.jade--></body></html>
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../../manifest.appcache">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>References | Book of Modern Front-end Tooling</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="zenorocha">
+        <meta name="description" content="This is a free, work-in-progress open-source book introducing you to the world of tooling for modern web applications.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../../dependency-management/webpack/troubleshooting.html" />
+        
+        
+        <link rel="prev" href="../../dependency-management/webpack/9-use-with-build-tools.html" />
+        
+
+        <meta property="og:title" content="References | Book of Modern Front-end Tooling">
+        <meta property="og:site_name" content="Book of Modern Front-end Tooling">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/zenorocha">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    </head>
+    <body>
+        
+
+        <link rel="stylesheet" href="../../gitbook/style.css">
+        
+
+
+        
+    <div class="book" data-github="zenorocha/book-of-modern-frontend-tooling" data-level="5.11" data-basepath="../.." data-revision="1400713011628">
+    <div class="book-header">
+    <!-- Actions Left -->
+    
+    <a href="https://github.com/zenorocha/book-of-modern-frontend-tooling" target="_blank" class="btn pull-left"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+	<div class="dropdown-caret">
+  <span class="caret-outer"></span>
+  <span class="caret-inner"></span>
+</div>
+
+	<div class="btn-group btn-block">
+		<button id="reduce-font-size" class="btn btn-default">A</button>
+		<button id="enlarge-font-size" class="btn btn-default">A</button>
+	</div>
+
+	<ul class="list-group font-family-list">
+		<li class="list-group-item" data-font="0">Serif</li>
+		<li class="list-group-item" data-font="1">Sans</li>
+	</ul>
+
+	<div class="btn-group btn-group-xs btn-block color-theme-list">
+	  <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+	  <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+	  <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+	</div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    
+
+    
+    <a href="https://github.com/zenorocha/book-of-modern-frontend-tooling/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/zenorocha/book-of-modern-frontend-tooling/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../../" >Book of Modern Front-end Tooling</a>
+    </h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        <li>
+            <a href="https://github.com/zenorocha" target="blank">About the author</a>
+        </li>
+        
+
+        
+        <li>
+            <a href="https://github.com/zenorocha/book-of-modern-frontend-tooling/issues" target="blank">Questions and Issues</a>
+        </li>
+        
+
+        
+        <li>
+            <a href="https://github.com/zenorocha/book-of-modern-frontend-tooling/edit/master/dependency-management/webpack/references.md" target="blank">Edit and Contribute</a>
+        </li>
+        
+
+        
+        <li class="divider"></li>
+        
+
+        <li data-level="0" data-path="index.html">
+            <a href="../../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" >
+                
+                <span><b>1.</b> Yeoman</span>
+                
+                
+            </li>
+        
+            <li  data-level="2" >
+                
+                <span><b>2.</b> Brunch</span>
+                
+                
+            </li>
+        
+            <li  data-level="3" >
+                
+                <span><b>3.</b> Loom</span>
+                
+                
+            </li>
+        
+            <li  data-level="4" data-path="dependency-management/bower/introduction.html">
+                
+                <a href="../../dependency-management/bower/introduction.html">
+                    <i class="fa fa-check"></i> <b>4.</b> Bower
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="5" data-path="dependency-management/webpack/introduction.html">
+                
+                <a href="../../dependency-management/webpack/introduction.html">
+                    <i class="fa fa-check"></i> <b>5.</b> webpack
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="5.1" data-path="dependency-management/webpack/getting-started.html">
+                            
+                            <a href="../../dependency-management/webpack/getting-started.html">
+                                <i class="fa fa-check"></i> <b>5.1.</b> Getting Started
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.2" data-path="dependency-management/webpack/1-requiring-modules.html">
+                            
+                            <a href="../../dependency-management/webpack/1-requiring-modules.html">
+                                <i class="fa fa-check"></i> <b>5.2.</b> Requiring Modules
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.3" data-path="dependency-management/webpack/2-using-loaders.html">
+                            
+                            <a href="../../dependency-management/webpack/2-using-loaders.html">
+                                <i class="fa fa-check"></i> <b>5.3.</b> Using Loaders
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.4" data-path="dependency-management/webpack/3-code-splitting.html">
+                            
+                            <a href="../../dependency-management/webpack/3-code-splitting.html">
+                                <i class="fa fa-check"></i> <b>5.4.</b> Code Splitting
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.5" data-path="dependency-management/webpack/4-multi-entry-builds.html">
+                            
+                            <a href="../../dependency-management/webpack/4-multi-entry-builds.html">
+                                <i class="fa fa-check"></i> <b>5.5.</b> Muli-entry Builds
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.6" data-path="dependency-management/webpack/5-require-context.html">
+                            
+                            <a href="../../dependency-management/webpack/5-require-context.html">
+                                <i class="fa fa-check"></i> <b>5.6.</b> Require Context
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.7" data-path="dependency-management/webpack/6-hot-module-replacement.html">
+                            
+                            <a href="../../dependency-management/webpack/6-hot-module-replacement.html">
+                                <i class="fa fa-check"></i> <b>5.7.</b> Hot Module Replacement
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.8" >
+                            
+                            <span><b>5.8.</b> Chunk Optimization</span>
+                            
+                        </li>
+                    
+                        <li  data-level="5.9" data-path="dependency-management/webpack/8-writing-loaders-and-plugins.html">
+                            
+                            <a href="../../dependency-management/webpack/8-writing-loaders-and-plugins.html">
+                                <i class="fa fa-check"></i> <b>5.9.</b> Writing Loaders And Plugins
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.10" data-path="dependency-management/webpack/9-use-with-build-tools.html">
+                            
+                            <a href="../../dependency-management/webpack/9-use-with-build-tools.html">
+                                <i class="fa fa-check"></i> <b>5.10.</b> Use With Build Tools
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.11" data-path="dependency-management/webpack/references.html">
+                            
+                            <a href="../../dependency-management/webpack/references.html">
+                                <i class="fa fa-check"></i> <b>5.11.</b> References
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.12" data-path="dependency-management/webpack/troubleshooting.html">
+                            
+                            <a href="../../dependency-management/webpack/troubleshooting.html">
+                                <i class="fa fa-check"></i> <b>5.12.</b> Troubleshooting
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="6" data-path="dependency-management/npm-browserify/introduction.html">
+                
+                <a href="../../dependency-management/npm-browserify/introduction.html">
+                    <i class="fa fa-check"></i> <b>6.</b> NPM browserify
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="6.1" data-path="dependency-management/npm-browserify/getting-started.html">
+                            
+                            <a href="../../dependency-management/npm-browserify/getting-started.html">
+                                <i class="fa fa-check"></i> <b>6.1.</b> Getting Started
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.2" data-path="dependency-management/npm-browserify/modules.html">
+                            
+                            <a href="../../dependency-management/npm-browserify/modules.html">
+                                <i class="fa fa-check"></i> <b>6.2.</b> Modules
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.3" data-path="dependency-management/npm-browserify/transforms.html">
+                            
+                            <a href="../../dependency-management/npm-browserify/transforms.html">
+                                <i class="fa fa-check"></i> <b>6.3.</b> Transforms
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.4" data-path="dependency-management/npm-browserify/development-workflow.html">
+                            
+                            <a href="../../dependency-management/npm-browserify/development-workflow.html">
+                                <i class="fa fa-check"></i> <b>6.4.</b> Development Workflow
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="7" >
+                
+                <span><b>7.</b> Modern Tools vs Shell Scripts</span>
+                
+                
+            </li>
+        
+            <li  data-level="8" data-path="build-systems/grunt/getting-started.html">
+                
+                <a href="../../build-systems/grunt/getting-started.html">
+                    <i class="fa fa-check"></i> <b>8.</b> Grunt
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="8.1" data-path="build-systems/grunt/linter.html">
+                            
+                            <a href="../../build-systems/grunt/linter.html">
+                                <i class="fa fa-check"></i> <b>8.1.</b> Linting Code
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="8.2" data-path="build-systems/grunt/sass.html">
+                            
+                            <a href="../../build-systems/grunt/sass.html">
+                                <i class="fa fa-check"></i> <b>8.2.</b> Integrating a CSS preprocessor
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="9" data-path="build-systems/brunch/introduction.html">
+                
+                <a href="../../build-systems/brunch/introduction.html">
+                    <i class="fa fa-check"></i> <b>9.</b> Brunch
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="9.1" data-path="build-systems/brunch/getting-started.html">
+                            
+                            <a href="../../build-systems/brunch/getting-started.html">
+                                <i class="fa fa-check"></i> <b>9.1.</b> Getting Started
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="9.2" data-path="build-systems/brunch/using-brunch.html">
+                            
+                            <a href="../../build-systems/brunch/using-brunch.html">
+                                <i class="fa fa-check"></i> <b>9.2.</b> Using Brunch
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="10" data-path="build-systems/gulp/introduction.html">
+                
+                <a href="../../build-systems/gulp/introduction.html">
+                    <i class="fa fa-check"></i> <b>10.</b> Gulp
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="10.1" data-path="build-systems/gulp/getting-started.html">
+                            
+                            <a href="../../build-systems/gulp/getting-started.html">
+                                <i class="fa fa-check"></i> <b>10.1.</b> Getting Started
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="10.2" data-path="build-systems/gulp/writing-tasks.html">
+                            
+                            <a href="../../build-systems/gulp/writing-tasks.html">
+                                <i class="fa fa-check"></i> <b>10.2.</b> Writing Tasks
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="10.3" data-path="build-systems/gulp/references.html">
+                            
+                            <a href="../../build-systems/gulp/references.html">
+                                <i class="fa fa-check"></i> <b>10.3.</b> References
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 32.142857142857146%;min-width: 28.571428571428573%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../../build-systems/gulp/introduction.html" title="Gulp" class="chapter done " data-progress="10" style="left: 3.5714285714285716%;"></a>
+    
+        <a href="../../build-systems/gulp/getting-started.html" title="Getting Started" class="chapter done " data-progress="10.1" style="left: 7.142857142857143%;"></a>
+    
+        <a href="../../build-systems/gulp/writing-tasks.html" title="Writing Tasks" class="chapter done " data-progress="10.2" style="left: 10.714285714285714%;"></a>
+    
+        <a href="../../build-systems/gulp/references.html" title="References" class="chapter done " data-progress="10.3" style="left: 14.285714285714286%;"></a>
+    
+        <a href="../../dependency-management/bower/introduction.html" title="Bower" class="chapter done new-chapter" data-progress="4" style="left: 17.857142857142858%;"></a>
+    
+        <a href="../../dependency-management/webpack/introduction.html" title="webpack" class="chapter done new-chapter" data-progress="5" style="left: 21.428571428571427%;"></a>
+    
+        <a href="../../dependency-management/webpack/getting-started.html" title="Getting Started" class="chapter done " data-progress="5.1" style="left: 25%;"></a>
+    
+        <a href="../../dependency-management/webpack/9-use-with-build-tools.html" title="Use With Build Tools" class="chapter done " data-progress="5.10" style="left: 28.571428571428573%;"></a>
+    
+        <a href="../../dependency-management/webpack/references.html" title="References" class="chapter done " data-progress="5.11" style="left: 32.142857142857146%;"></a>
+    
+        <a href="../../dependency-management/webpack/troubleshooting.html" title="Troubleshooting" class="chapter  " data-progress="5.12" style="left: 35.714285714285715%;"></a>
+    
+        <a href="../../dependency-management/webpack/1-requiring-modules.html" title="Requiring Modules" class="chapter  " data-progress="5.2" style="left: 39.285714285714285%;"></a>
+    
+        <a href="../../dependency-management/webpack/2-using-loaders.html" title="Using Loaders" class="chapter  " data-progress="5.3" style="left: 42.857142857142854%;"></a>
+    
+        <a href="../../dependency-management/webpack/3-code-splitting.html" title="Code Splitting" class="chapter  " data-progress="5.4" style="left: 46.42857142857143%;"></a>
+    
+        <a href="../../dependency-management/webpack/4-multi-entry-builds.html" title="Muli-entry Builds" class="chapter  " data-progress="5.5" style="left: 50%;"></a>
+    
+        <a href="../../dependency-management/webpack/5-require-context.html" title="Require Context" class="chapter  " data-progress="5.6" style="left: 53.57142857142857%;"></a>
+    
+        <a href="../../dependency-management/webpack/6-hot-module-replacement.html" title="Hot Module Replacement" class="chapter  " data-progress="5.7" style="left: 57.142857142857146%;"></a>
+    
+        <a href="../../dependency-management/webpack/8-writing-loaders-and-plugins.html" title="Writing Loaders And Plugins" class="chapter  " data-progress="5.9" style="left: 60.714285714285715%;"></a>
+    
+        <a href="../../dependency-management/npm-browserify/introduction.html" title="NPM browserify" class="chapter  new-chapter" data-progress="6" style="left: 64.28571428571429%;"></a>
+    
+        <a href="../../dependency-management/npm-browserify/getting-started.html" title="Getting Started" class="chapter  " data-progress="6.1" style="left: 67.85714285714286%;"></a>
+    
+        <a href="../../dependency-management/npm-browserify/modules.html" title="Modules" class="chapter  " data-progress="6.2" style="left: 71.42857142857143%;"></a>
+    
+        <a href="../../dependency-management/npm-browserify/transforms.html" title="Transforms" class="chapter  " data-progress="6.3" style="left: 75%;"></a>
+    
+        <a href="../../dependency-management/npm-browserify/development-workflow.html" title="Development Workflow" class="chapter  " data-progress="6.4" style="left: 78.57142857142857%;"></a>
+    
+        <a href="../../build-systems/grunt/getting-started.html" title="Grunt" class="chapter  new-chapter" data-progress="8" style="left: 82.14285714285714%;"></a>
+    
+        <a href="../../build-systems/grunt/linter.html" title="Linting Code" class="chapter  " data-progress="8.1" style="left: 85.71428571428571%;"></a>
+    
+        <a href="../../build-systems/grunt/sass.html" title="Integrating a CSS preprocessor" class="chapter  " data-progress="8.2" style="left: 89.28571428571429%;"></a>
+    
+        <a href="../../build-systems/brunch/introduction.html" title="Brunch" class="chapter  new-chapter" data-progress="9" style="left: 92.85714285714286%;"></a>
+    
+        <a href="../../build-systems/brunch/getting-started.html" title="Getting Started" class="chapter  " data-progress="9.1" style="left: 96.42857142857143%;"></a>
+    
+        <a href="../../build-systems/brunch/using-brunch.html" title="Using Brunch" class="chapter  " data-progress="9.2" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../dependency-management/webpack/9-use-with-build-tools.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../dependency-management/webpack/troubleshooting.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../../gitbook/app.js"></script>
+        
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-mixpanel/plugin.js"></script>
+    
+
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
+    </body>
+</html>
